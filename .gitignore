@@ -1,5 +1,5 @@
 *.iml
-bin/
+
 out/
 .idea/
 ./project

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project name="TestCases" default="test">
+	
+	<target name="delete">
+		<delete failonerror="false" dir="lib"></delete></target>
+	
+	<target name="clean" depends="delete">
+	<mkdir dir="lib"/>
+    <mkdir dir="bin"/>
+	</target>
+	
+	<target name="compile" depends="delete">
+	<javac includeantruntime="true" srcdir="src" destdir="bin" includes="**/*.java"></javac>
+	</target>
+	
+	<target name="test" depends="compile">
+	
+	</target>
+</project>
