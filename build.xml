@@ -1,19 +1,37 @@
 <?xml version="1.0"?>
-<project name="TestCases" default="test">
+<project name="TestCases" default="junit" basedir=".">
 	
-	<target name="delete">
-		<delete failonerror="false" dir="lib"></delete></target>
 	
-	<target name="clean" depends="delete">
-	<mkdir dir="lib"/>
-    <mkdir dir="bin"/>
+	<target name="test-compile">
+	    <javac includeantruntime="false" srcdir="src" destdir="bin" />
 	</target>
 	
-	<target name="compile" depends="delete">
-	<javac includeantruntime="true" srcdir="src" destdir="bin" includes="**/*.java"></javac>
+	
+	<path id="classpath">
+			<pathelement location="/Users/rohan/Documents/eclipse/workspace_store/TestCases/lib/junit-4.12.jar"/>	
+			<pathelement location="/Users/rohan/Documents/eclipse/workspace_store/TestCases/lib/hamcrest-all-1.3.jar"/>	
+			<pathelement location="/Users/rohan/Documents/eclipse/workspace_store/TestCases/bin"/>
+		</path>
+	
+	<target name="junit" depends="test-compile">
+		<junit printsummary="on">
+			
+			<classpath>
+				<path refid="classpath" />
+				
+			</classpath>
+			
+			<batchtest>
+			        <fileset dir="bin">
+			          <include name="**/*Test.class"/>
+			        </fileset>
+			  </batchtest>
+			<formatter type="plain" />
+			<test name="org.testing.com.sim" outfile="testresult"/>
+		</junit>
 	</target>
 	
-	<target name="test" depends="compile">
+	<target name="test" depends="junit">
 	
 	</target>
 </project>
