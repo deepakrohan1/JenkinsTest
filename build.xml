@@ -8,9 +8,9 @@
 	
 	
 	<path id="classpath">
-			<pathelement location="/Users/rohan/Documents/eclipse/workspace_store/TestCases/lib/junit-4.12.jar"/>	
-			<pathelement location="/Users/rohan/Documents/eclipse/workspace_store/TestCases/lib/hamcrest-all-1.3.jar"/>	
-			<pathelement location="/Users/rohan/Documents/eclipse/workspace_store/TestCases/bin"/>
+			<pathelement location="lib/junit-4.12.jar"/>	
+			<pathelement location="lib/hamcrest-all-1.3.jar"/>	
+			<pathelement location="bin"/>
 		</path>
 	
 	<target name="junit" depends="test-compile">
